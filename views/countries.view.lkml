@@ -21,6 +21,14 @@ view: countries {
     type: string
     sql: ${TABLE}.name ;;
   }
+  dimension: zona_google {
+    sql: ${name} ;;
+    link: {
+      label: "Google"
+      url: "https://www.google.com/search?q={{ value }}"
+      icon_url: "https://google.com/favicon.ico"
+    }
+  }
   dimension_group: updated {
     type: time
     timeframes: [raw, time, date, week, month, quarter, year]
